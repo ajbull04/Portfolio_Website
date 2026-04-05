@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 10% 8%;
+    --foreground: 40 20% 90%;
+
+    --card: 220 10% 12%;
+    --card-foreground: 40 20% 90%;
+
+    --popover: 220 10% 12%;
+    --popover-foreground: 40 20% 90%;
+
+    --primary: 12 90% 62%;
+    --primary-foreground: 220 10% 8%;
+
+    --secondary: 220 10% 16%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 220 8% 18%;
+    --muted-foreground: 220 8% 55%;
+
+    --accent: 40 30% 88%;
+    --accent-foreground: 220 10% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 8% 20%;
+    --input: 220 8% 20%;
+    --ring: 12 90% 62%;
+
+    --radius: 0.5rem;
+
+    --coral: 12 90% 62%;
+    --coral-glow: 12 100% 72%;
+    --cream: 40 30% 88%;
+    --charcoal: 220 10% 8%;
+    --charcoal-light: 220 10% 14%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --sidebar-background: 220 10% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 12 90% 62%;
+    --sidebar-primary-foreground: 220 10% 8%;
+    --sidebar-accent: 220 10% 16%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 220 8% 20%;
+    --sidebar-ring: 12 90% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient-coral {
+    background: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--coral-glow)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-coral {
+    background: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--coral-glow)));
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, hsl(var(--coral)), hsl(var(--coral-glow))) 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
