@@ -20,6 +20,8 @@ const ProjectDetail = () => {
     );
   }
 
+  const hasLinks = Boolean(project.liveUrl || project.repoUrl);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Back nav */}
@@ -45,11 +47,7 @@ const ProjectDetail = () => {
         transition={{ duration: 0.8 }}
         className="w-full h-[50vh] md:h-[60vh] overflow-hidden relative"
       >
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover"
-        />
+        <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
       </motion.div>
 
@@ -83,26 +81,34 @@ const ProjectDetail = () => {
             <span>{project.timeline}</span>
           </div>
 
-          <div className="flex gap-4 mb-12">
-            <a
-              href="#"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-display text-sm font-medium hover:opacity-90 transition-opacity"
-            >
-              <ExternalLink className="w-4 h-4" />
-              Live Site
-            </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-foreground font-display text-sm font-medium hover:border-primary/40 transition-colors"
-            >
-              <Github className="w-4 h-4" />
-              Source Code
-            </a>
-          </div>
+          {hasLinks && (
+            <div className="flex flex-wrap gap-4 mb-12">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-display text-sm font-medium hover:opacity-90 transition-opacity"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Live site
+                </a>
+              )}
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-foreground font-display text-sm font-medium hover:border-primary/40 transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                  Source code
+                </a>
+              )}
+            </div>
+          )}
 
-          <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-16">
-            {project.longDescription}
-          </p>
+          <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-16">{project.longDescription}</p>
 
           {/* Highlights */}
           <motion.div
@@ -111,7 +117,7 @@ const ProjectDetail = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
           >
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">
-              Key Highlights<span className="text-gradient-coral">.</span>
+              Key highlights<span className="text-gradient-coral">.</span>
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {project.highlights.map((highlight, i) => (

@@ -19,14 +19,10 @@ const HeroSection = () => {
             transition={{ duration: 0.9, delay: 0.3 }}
           >
             <p className="font-display text-sm uppercase tracking-[0.3em] text-primary mb-4">
-              Innovative Software Engineer
+              Aaron Bullock · Software Engineer · Passionate Builder
             </p>
-            <h1 className="font-display text-6xl md:text-8xl font-bold leading-[0.9] tracking-tight text-foreground">
-              I build
-              <br />
-              <span className="text-gradient-coral">digital</span>
-              <br />
-              experiences
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight text-foreground max-w-4xl">
+              Building systems from <span className="text-gradient-coral">firmware</span> to <span className="text-gradient-coral">full-stack</span> applications.
             </h1>
           </motion.div>
 
@@ -34,30 +30,45 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
-            className="text-lg text-muted-foreground max-w-md leading-relaxed font-body"
+            className="text-lg text-muted-foreground max-w-lg leading-relaxed font-body"
           >
-            Crafting bold interfaces and meaningful interactions that leave a lasting impression. Based anywhere the WiFi works.
+            Software engineering student with internship experience at Persistent Systems and the FAA—from mobile and web
+            backends to firmware, BLE, and automation. I’m happiest when I’m shipping, measuring, and tightening the
+            loop—clean APIs, fast queries, solid tests, and tooling that saves people time.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.9 }}
-            className="flex items-center gap-6"
+            className="flex flex-wrap items-center gap-4 sm:gap-6"
           >
             <button
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               className="bg-gradient-coral px-8 py-3.5 rounded-full font-display text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
             >
-              View Work
+              View projects
             </button>
             <button
-              onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="border border-border px-8 py-3.5 rounded-full font-display text-sm font-semibold text-foreground hover:border-primary hover:text-primary transition-colors"
             >
-              My Journey
+              Get in touch
             </button>
           </motion.div>
+
+          {/* <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.05 }}
+            className="flex flex-wrap gap-2 text-xs sm:text-sm text-muted-foreground font-body"
+          >
+            <span className="px-3 py-1 rounded-full border border-border bg-card/40">Full-stack</span>
+            <span className="px-3 py-1 rounded-full border border-border bg-card/40">Systems</span>
+            <span className="px-3 py-1 rounded-full border border-border bg-card/40">Embedded</span>
+            <span className="px-3 py-1 rounded-full border border-border bg-card/40">Databases</span>
+            <span className="px-3 py-1 rounded-full border border-border bg-card/40">Automation</span>
+          </motion.div> */}
         </div>
 
         {/* Right — Stats */}
@@ -68,10 +79,10 @@ const HeroSection = () => {
           className="hidden lg:grid grid-cols-2 gap-6"
         >
           {[
-            { value: "5+", label: "Years Experience" },
-            { value: "30+", label: "Projects Shipped" },
-            { value: "15+", label: "Happy Clients" },
-            { value: "∞", label: "Cups of Coffee" },
+            { value: "3.7", label: "GPA at Duke" },
+            { value: "6K+", label: "Users on Trybl platform" },
+            { value: "500+", label: "Students supported as TA" },
+            { value: "2027", label: "Expected graduation" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}

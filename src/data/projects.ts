@@ -13,59 +13,73 @@ export interface Project {
   role: string;
   timeline: string;
   highlights: string[];
+  liveUrl?: string;
+  repoUrl?: string;
 }
 
 const projects: Project[] = [
   {
-    slug: "nebula-design-system",
-    title: "Nebula Design System",
-    description: "A comprehensive design system built for scale. Tokens, components, and patterns for modern product teams.",
+    slug: "trybl",
+    title: "Trybl",
+    description:
+      "Full-stack social platform for universities with a React Native client, JWT auth, and a high-performance Go/Python API.",
     longDescription:
-      "Nebula is a living design system that bridges the gap between design and engineering. It includes a robust token architecture, a library of 60+ accessible components, and detailed documentation that keeps teams aligned. Built to scale from startup to enterprise, Nebula has been adopted by multiple product squads and reduced UI inconsistencies by 80%.",
-    tags: ["React", "TypeScript", "Figma"],
+      "Trybl is a production-grade social networking platform built for campus communities. I architected the system end to end: a React Native and Expo mobile experience for 6,000+ users, dual-language backend services in Python and Go with 30+ REST endpoints, and PostgreSQL tuned for sub-millisecond queries. Security and integrations include JWT with refresh, plus OAuth 2.0 for Google and Apple Calendar.",
+    tags: [
+      "TypeScript",
+      "React Native",
+      "Expo",
+      "Python",
+      "Go",
+      "PostgreSQL",
+      "Docker",
+      "Django",
+    ],
     image: project1,
     featured: true,
-    role: "Lead Designer & Frontend Engineer",
+    role: "Founding engineer & architect",
+    timeline: "2023 — Present",
+    highlights: [
+      "Served 6,000+ university users from a React Native mobile client",
+      "Built 30+ REST API endpoints in Python and Go for auth, messaging, discovery, and calendar",
+      "JWT authentication with automatic refresh; OAuth 2.0 for Google and Apple Calendar",
+      "Cut backend query latency from 100ms+ to under 1ms with 20+ PostgreSQL indexes",
+    ],
+  },
+  {
+    slug: "publisher-accounting-system",
+    title: "Publisher Accounting System",
+    description:
+      "Full-stack accounting product that automates sales tracking and royalty payouts, replacing spreadsheet workflows.",
+    longDescription:
+      "A Next.js and TypeScript platform for publishers to model books, authors, sales, and royalties with a normalized PostgreSQL schema via Prisma. The app uses server-rendered tables with URL-driven state and server mutations for refresh-safe caching. Infrastructure includes Docker, Nginx, GitHub Actions CI/CD to QA and production, and Vitest for confidence in changes.",
+    tags: ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Docker", "Nginx", "Vitest"],
+    image: project2,
+    role: "Full-stack developer",
     timeline: "2024 — Present",
     highlights: [
-      "60+ accessible, themeable components",
-      "Design token pipeline from Figma to code",
-      "Reduced UI inconsistencies by 80%",
-      "Adopted by 5 product teams across the org",
+      "Replaced manual spreadsheets with automated sales and royalty tracking",
+      "Deployed with Docker, Nginx, and GitHub Actions to QA and production",
+      "Designed normalized PostgreSQL schema (books, authors, sales, royalties) with Prisma",
+      "Server-rendered tables with URL state and server-side mutations for reliable caching",
     ],
   },
   {
-    slug: "aperias-analytics",
-    title: "Aperias Analytics",
-    description: "Real-time analytics dashboard with rich data visualizations and intelligent insights.",
+    slug: "smart-basketball-game",
+    title: "Smart Basketball Game",
+    description:
+      "FPGA arcade basketball game with custom pipelined CPU, I²C color sensing, VGA output, and MIPS assembly game logic.",
     longDescription:
-      "Aperias is a next-generation analytics platform that transforms raw data into actionable stories. Featuring real-time streaming dashboards, AI-powered anomaly detection, and a composable widget system, the platform empowers product and growth teams to make faster, data-driven decisions without writing SQL.",
-    tags: ["Next.js", "D3", "PostgreSQL"],
-    image: project2,
-    role: "Full-Stack Developer",
-    timeline: "2023 — 2024",
-    highlights: [
-      "Real-time streaming with WebSocket pipelines",
-      "AI-powered anomaly detection engine",
-      "Composable drag-and-drop widget builder",
-      "50% faster insight discovery vs. legacy tool",
-    ],
-  },
-  {
-    slug: "pulse-mobile-app",
-    title: "Pulse Mobile App",
-    description: "Health & wellness companion app with beautiful animations and an intuitive UX.",
-    longDescription:
-      "Pulse is a mobile-first wellness platform designed to make healthy habits feel effortless. With buttery-smooth animations, personalized onboarding, and a gamified streak system, Pulse achieved a 4.8-star rating and 40% higher Day-30 retention compared to competitors in the category.",
-    tags: ["React Native", "Node.js", "Figma"],
+      "A hardware–software capstone that combines digital design and computer architecture. The system includes a custom 16-bit, 100MHz pipelined RISC CPU with memory-mapped I/O, a Verilog FSM and I²C driver for a rim-mounted RGB sensor, VGA display timing, and game logic written in MIPS assembly running on the custom ISA.",
+    tags: ["Verilog", "FPGA", "Assembly", "I²C", "VGA", "Computer architecture"],
     image: project3,
-    role: "Product Designer & Mobile Developer",
-    timeline: "2023",
+    role: "Designer & implementer",
+    timeline: "2024",
     highlights: [
-      "4.8★ App Store rating",
-      "40% higher D30 retention vs. competitors",
-      "Gamified streak & reward system",
-      "Personalized onboarding with adaptive UI",
+      "Integrated sensors, buttons, and VGA for real-time arcade gameplay",
+      "Custom I²C driver and FSM in Verilog for a rim-mounted RGB color sensor",
+      "16-bit 100MHz pipelined CPU with custom RISC ISA and memory-mapped I/O",
+      "Game logic in MIPS assembly: scoring, timing, and display control",
     ],
   },
 ];

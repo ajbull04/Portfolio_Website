@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin, Phone } from "lucide-react";
+
+const EMAIL = "ajbull426@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/ajbull426";
+const PHONE_DISPLAY = "856-404-7645";
+const PHONE_TEL = "tel:+18564047645";
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Mail, label: "Email", href: "mailto:hello@example.com" },
+  { icon: Mail, label: "Email", href: `mailto:${EMAIL}` },
+  { icon: Linkedin, label: "LinkedIn", href: LINKEDIN },
+  { icon: Phone, label: "Phone", href: PHONE_TEL },
 ];
 
 const ContactSection = () => (
@@ -18,26 +22,37 @@ const ContactSection = () => (
         transition={{ duration: 0.7 }}
         className="space-y-6"
       >
-        <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">Get In Touch</p>
+        <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">Get in touch</p>
         <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground">
-          Let's create
+          Let's talk
           <br />
-          <span className="text-gradient-coral">something great</span>
+          <span className="text-gradient-coral">internships</span>
         </h2>
         <p className="text-muted-foreground font-body text-lg leading-relaxed">
-          Have a project in mind, want to collaborate, or just want to say hi? I'd love to hear from you.
+          I'm looking for software engineering internships where I can work on real products—backend, full-stack, mobile,
+          or systems. If that sounds like your team, I'd love to connect.
+        </p>
+        <p className="text-muted-foreground font-body leading-relaxed">
+          If you share a short problem statement (and the stack), I can usually respond with how I’d approach it and what
+          I’d ship in the first week.
         </p>
 
         <motion.a
-          href="mailto:hello@example.com"
+          href={`mailto:${EMAIL}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="inline-block bg-gradient-coral px-10 py-4 rounded-full font-display text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
         >
-          Say Hello
+          Email me
         </motion.a>
+
+        <p className="text-sm text-muted-foreground font-body pt-2">
+          <a href={PHONE_TEL} className="hover:text-primary transition-colors">
+            {PHONE_DISPLAY}
+          </a>
+        </p>
 
         <div className="flex justify-center gap-6 pt-8">
           {socials.map((s) => (
@@ -56,8 +71,8 @@ const ContactSection = () => (
 
     {/* Footer */}
     <div className="container mx-auto mt-24 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground font-body">
-      <p>© 2026 JD. All rights reserved.</p>
-      <p>Designed & built with passion.</p>
+      <p>© 2026 Aaron Bullock. All rights reserved.</p>
+      <p>Duke University · Software engineering</p>
     </div>
   </section>
 );
