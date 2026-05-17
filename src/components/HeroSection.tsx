@@ -39,14 +39,20 @@ const HeroSection = () => {
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tighter text-foreground">
             Building systems from{" "}
-            <span className="text-gradient-coral">firmware</span> to full-stack
-            applications.
+            <span className="text-gradient-coral">firmware</span> to {" "}
+            <span className="text-gradient-coral">full-stack</span> applications.
+          
           </h1>
 
-          <p className="max-w-xl font-body text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+          {/* <p className="max-w-xl font-body text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
             Bridging the gap between hardware constraints and scalable cloud
             architecture. Engineering high-performance solutions across the
             entire technical vertical.
+          </p> */}
+           <p className="max-w-xl font-body text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
+           Software engineer who works across the stack: from embedded and systems 
+           code to full-stack and 
+           distributed backends in production.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">

@@ -18,16 +18,16 @@ const experiences = [
     location: "Durham, NC",
     period: "Aug 2025 – Present",
     bullets: [
-      "Firmware for biometric devices using C, nRF SDK, and Zephyr RTOS to capture and analyze muscle data",
-      "BLE device-to-device communication implemented in C++",
-      "Pipelines to process datasets from embedded sensors for faster biometric analysis",
+      "Developed firmware for biometric devices using C, nRF SDK, and Zephyr RTOS to capture and analyze muscle data",
+      "Implemented BLE device-to-device communication in C++",
+      "Created pipelines to process data from embedded sensors for faster biometric analysis",
     ],
   },
   {
     role: "Digital Design Teaching Assistant",
     company: "Duke University",
     location: "Durham, NC",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 - Present",
     bullets: [
       "Taught computer architecture topics—pipelining, caching, memory hierarchy, ISA execution—to 500+ students",
       "Debugged student programs in C and Assembly on CPU and memory models",
@@ -38,13 +38,13 @@ const experiences = [
     role: "Software Engineer Intern",
     company: "Persistent Systems, LLC",
     location: "New York, NY",
-    period: "May 2025 – Aug 2025",
+    period: "May 2025 - Aug 2025",
     bullets: [
-      "Removed a production bottleneck with a Java and C firmware Quality Control app for automated device validation",
+      "Removed a production bottleneck with a Java, Kotlin, and C firmware Quality Control app for automated device verification and validation",
       "Achieved ~6-minute device validation through Gradle automation and optimization",
       "Extended SQL schema for device telemetry and production error codes to improve failure analysis",
       "Added unit tests and real-time device status UI to the company-wide QC application",
-      "Cut development friction ~50% with automated build and deployment bash scripts",
+      "Improved development efficiency by ~200% with automated build and deployment bash scripts",
     ],
   },
   {
@@ -54,7 +54,7 @@ const experiences = [
     period: "May 2024 – Aug 2024",
     bullets: [
       "Cut test duration 66% for a national tool by leading simulations in a proprietary FAA framework",
-      "Improved data processing ~500% with multithreading and parallel C POSIX",
+      "Enhanced data processing by 500% by introducing multithreading and parallel processing using the C POSIX library.",
       "Prototyped an AI model for automated testing and evaluation",
       "Reduced out-of-lab time ~50% with Python automation for testing workflows",
     ],

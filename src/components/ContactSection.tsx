@@ -24,17 +24,15 @@ const ContactSection = () => (
       >
         <p className="font-display text-sm uppercase tracking-[0.3em] text-primary">Get in touch</p>
         <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground">
-          Let's talk
-          <br />
-          <span className="text-gradient-coral">internships</span>
+          Let's <span className="text-gradient-coral">talk</span>
         </h2>
         <p className="text-muted-foreground font-body text-lg leading-relaxed">
-          I'm looking for software engineering internships where I can work on real products—backend, full-stack, mobile,
+          I'm looking for software engineering careers where I can work on real products, backend, full-stack, mobile,
           or systems. If that sounds like your team, I'd love to connect.
         </p>
         <p className="text-muted-foreground font-body leading-relaxed">
-          If you share a short problem statement (and the stack), I can usually respond with how I’d approach it and what
-          I’d ship in the first week.
+          Even if you just want to talk through a problem, explore other opportunities, or reach out about something
+          else, I'd love to hear from you. I'm open to connecting on almost anything, so please get in touch.
         </p>
 
         <motion.a

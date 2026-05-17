@@ -64,29 +64,24 @@ const AboutSection = () => (
           About<span className="text-gradient-coral">.</span>
         </h2>
         <p className="text-muted-foreground font-body leading-relaxed text-lg">
-          I'm Aaron Bullock, a Duke student pursuing an MEng in Software Engineering alongside BSE Electrical & Computer
-          Engineering and BS Computer Science. I like problems that cross the stack: shipping APIs and mobile clients,
-          tightening databases, and writing firmware when the product lives on a device.
+          I'm Aaron Bullock, a Duke student pursuing an MEng in Electrical and Computer Engineering with a
+          concentration in Software Engineering, following a BSE in Electrical and Computer Engineering and Computer
+          Science. I'm especially passionate about building across the stack, from low-level systems work like firmware,
+          drivers, and systems programming to designing scalable distributed systems and core infrastructure. I enjoy
+          working on the foundational layers that power reliable services, efficient data flow, and high-performance
+          platforms at scale.
         </p>
         <p className="text-muted-foreground font-body leading-relaxed">
-          Recently I've interned at Persistent Systems (QC automation, Java/C, SQL, Gradle) and the FAA (simulation,
-          parallel C, Python tooling, ML prototyping), researched biometric firmware with Zephyr and BLE, and TA'd digital
-          design for hundreds of peers. I'm looking for internships where I can contribute to production code and grow
-          with a strong team.
+          Outside of work, I'm drawn to competitive environments, sports, strategy games, anything with clear goals and
+          measurable progress. Basketball is my favorite; otherwise I'm puzzling or tinkering on a side project. I also
+          love trying new hobbies, games, or something completely unfamiliar.
         </p>
-        <div className="pt-2 grid gap-3">
+        <div className="pt-2">
           <div className="rounded-2xl border border-border bg-card/40 px-5 py-4">
             <p className="font-display text-sm font-semibold text-foreground">What you can count on</p>
             <p className="text-muted-foreground font-body leading-relaxed mt-1">
-              I communicate clearly, ask good questions early, and don’t disappear when something’s confusing. I like
-              turning messy problems into small, testable pieces and shipping improvements steadily.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-border bg-card/40 px-5 py-4">
-            <p className="font-display text-sm font-semibold text-foreground">What I’m optimizing for</p>
-            <p className="text-muted-foreground font-body leading-relaxed mt-1">
-              Building things that feel fast and reliable: solid abstractions, performance wins that matter, and tools
-              that make the next engineer’s day easier.
+              I'm passionate about problem-solving and tend to fall in love with the problem, and the solution. I won't
+              quit when it gets hard; I keep pushing until we've found the most optimal answer we can ship.
             </p>
           </div>
         </div>
@@ -119,6 +114,13 @@ const AboutSection = () => (
             </div>
           </div>
         ))}
+        {/* <div className="rounded-2xl border border-border bg-card/40 px-5 py-4">
+          <p className="font-display text-sm font-semibold text-foreground">What I'm optimizing for</p>
+          <p className="text-muted-foreground font-body leading-relaxed mt-1">
+            Building things that feel fast and reliable: solid abstractions, performance wins that matter, and tools
+            that make the next engineer's day easier.
+          </p>
+        </div> */}
       </motion.div>
     </div>
   </section>
