@@ -1,7 +1,7 @@
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
-import TryblImage from "@/assets/trybl.png";
+import TryblImage from "@/assets/Trybl.png";
 import PublisherAccountingSystemImage from "@/assets/Hypothetical.png";
 
 export interface Project {
