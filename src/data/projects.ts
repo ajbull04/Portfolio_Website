@@ -1,6 +1,8 @@
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
+import TryblImage from "@/assets/trybl.png";
+import PublisherAccountingSystemImage from "@/assets/Hypothetical.png";
 
 export interface Project {
   slug: string;
@@ -35,12 +37,12 @@ const projects: Project[] = [
       "Docker",
       "Django",
     ],
-    image: project1,
+    image: TryblImage,
     featured: true,
     role: "Founding engineer & architect",
-    timeline: "2023 — Present",
+    timeline: "2025 — Present",
     highlights: [
-      "Served 6,000+ university users from a React Native mobile client",
+      "Developed a machine learning pipeline to analyze user behavior and implement the app's recommendation system",
       "Built 30+ REST API endpoints in Python and Go for auth, messaging, discovery, and calendar",
       "JWT authentication with automatic refresh; OAuth 2.0 for Google and Apple Calendar",
       "Cut backend query latency from 100ms+ to under 1ms with 20+ PostgreSQL indexes",
@@ -54,9 +56,9 @@ const projects: Project[] = [
     longDescription:
       "A Next.js and TypeScript platform for publishers to model books, authors, sales, and royalties with a normalized PostgreSQL schema via Prisma. The app uses server-rendered tables with URL-driven state and server mutations for refresh-safe caching. Infrastructure includes Docker, Nginx, GitHub Actions CI/CD to QA and production, and Vitest for confidence in changes.",
     tags: ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Docker", "Nginx", "Vitest"],
-    image: project2,
+    image: PublisherAccountingSystemImage,
     role: "Full-stack developer",
-    timeline: "2024 — Present",
+    timeline: "2026 — Present",
     highlights: [
       "Replaced manual spreadsheets with automated sales and royalty tracking",
       "Deployed with Docker, Nginx, and GitHub Actions to QA and production",
@@ -74,7 +76,7 @@ const projects: Project[] = [
     tags: ["Verilog", "FPGA", "Assembly", "I²C", "VGA", "Computer architecture"],
     image: project3,
     role: "Designer & implementer",
-    timeline: "2024",
+    timeline: "2025",
     highlights: [
       "Integrated sensors, buttons, and VGA for real-time arcade gameplay",
       "Custom I²C driver and FSM in Verilog for a rim-mounted RGB color sensor",
