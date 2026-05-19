@@ -1,15 +1,18 @@
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import TryblImage from "@/assets/Trybl.png";
 import PublisherAccountingSystemImage from "@/assets/Hypothetical.png";
+
+export const PROJECT_CATEGORIES = ["Full Stack", "Embedded Systems", "Mobile"] as const;
+
+export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
 
 export interface Project {
   slug: string;
   title: string;
   description: string;
   longDescription: string;
-  tags: string[];
+  categories: ProjectCategory[];
+  stack: string[];
   image: string;
   featured?: boolean;
   role: string;
@@ -27,7 +30,8 @@ const projects: Project[] = [
       "Full-stack social platform for universities with a React Native client, JWT auth, and a high-performance Go/Python API.",
     longDescription:
       "Trybl is a production-grade social networking platform built for campus communities. I architected the system end to end: a React Native and Expo mobile experience for 6,000+ users, dual-language backend services in Python and Go with 30+ REST endpoints, and PostgreSQL tuned for sub-millisecond queries. Security and integrations include JWT with refresh, plus OAuth 2.0 for Google and Apple Calendar.",
-    tags: [
+    categories: ["Full Stack", "Mobile"],
+    stack: [
       "TypeScript",
       "React Native",
       "Expo",
@@ -55,8 +59,10 @@ const projects: Project[] = [
       "Full-stack accounting product that automates sales tracking and royalty payouts, replacing spreadsheet workflows.",
     longDescription:
       "A Next.js and TypeScript platform for publishers to model books, authors, sales, and royalties with a normalized PostgreSQL schema via Prisma. The app uses server-rendered tables with URL-driven state and server mutations for refresh-safe caching. Infrastructure includes Docker, Nginx, GitHub Actions CI/CD to QA and production, and Vitest for confidence in changes.",
-    tags: ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Docker", "Nginx", "Vitest"],
+    categories: ["Full Stack"],
+    stack: ["TypeScript", "Next.js", "Prisma", "PostgreSQL", "Docker", "Nginx", "Vitest"],
     image: PublisherAccountingSystemImage,
+    featured: true,
     role: "Full-stack developer",
     timeline: "2026 — Present",
     highlights: [
@@ -73,8 +79,10 @@ const projects: Project[] = [
       "FPGA arcade basketball game with custom pipelined CPU, I²C color sensing, VGA output, and MIPS assembly game logic.",
     longDescription:
       "A hardware–software capstone that combines digital design and computer architecture. The system includes a custom 16-bit, 100MHz pipelined RISC CPU with memory-mapped I/O, a Verilog FSM and I²C driver for a rim-mounted RGB sensor, VGA display timing, and game logic written in MIPS assembly running on the custom ISA.",
-    tags: ["Verilog", "FPGA", "Assembly", "I²C", "VGA", "Computer architecture"],
+    categories: ["Embedded Systems"],
+    stack: ["Verilog", "FPGA", "Assembly", "I²C", "VGA", "Computer architecture"],
     image: project3,
+    featured: true,
     role: "Designer & implementer",
     timeline: "2025",
     highlights: [
@@ -85,5 +93,12 @@ const projects: Project[] = [
     ],
   },
 ];
+
+export const getFeaturedProjects = (): Project[] => projects.filter((p) => p.featured);
+
+export const filterProjectsByCategories = (selected: ProjectCategory[]): Project[] => {
+  if (selected.length === 0) return projects;
+  return projects.filter((p) => p.categories.some((c) => selected.includes(c)));
+};
 
 export default projects;

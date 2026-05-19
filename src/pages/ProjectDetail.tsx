@@ -31,13 +31,21 @@ const ProjectDetail = () => {
         transition={{ duration: 0.4 }}
         className="fixed top-8 left-8 z-50"
       >
-        <Link
-          to="/"
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border text-foreground hover:border-primary/40 transition-all font-display text-sm"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back
-        </Link>
+        <motion.div className="flex flex-wrap gap-2">
+          <Link
+            to="/projects"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border text-foreground hover:border-primary/40 transition-all font-display text-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            All projects
+          </Link>
+          <Link
+            to="/"
+            className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-md border border-border text-muted-foreground hover:border-primary/40 hover:text-foreground transition-all font-display text-sm"
+          >
+            Home
+          </Link>
+        </motion.div>
       </motion.div>
 
       {/* Hero image */}
@@ -59,15 +67,27 @@ const ProjectDetail = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="max-w-3xl"
         >
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-xs font-display font-medium rounded-full bg-secondary text-secondary-foreground"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="space-y-3 mb-6">
+            <div className="flex flex-wrap gap-2">
+              {project.categories.map((category) => (
+                <span
+                  key={category}
+                  className="px-3 py-1 text-xs font-display font-medium rounded-full border border-primary/30 bg-primary/10 text-primary"
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {project.stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 text-xs font-display font-medium rounded-full bg-secondary text-secondary-foreground"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-4">
